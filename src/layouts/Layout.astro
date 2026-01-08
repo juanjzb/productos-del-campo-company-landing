@@ -36,6 +36,7 @@ const navItems = [
           const toggleBtn = document.getElementById("mobile-menu-toggle");
           const navLinks = document.getElementById("mobile-menu");
           const header = document.getElementById("header");
+          const goTopBtn = document.getElementById("go-top-btn");
 
           // Header scroll effect
           window.addEventListener("scroll", () => {
@@ -43,6 +44,12 @@ const navItems = [
               header.classList.add("shadow-md");
             } else {
               header.classList.remove("shadow-md");
+            }
+
+            if (window.scrollY > 300) {
+              goTopBtn.classList.remove("translate-y-20", "opacity-0", "invisible");
+            } else {
+              goTopBtn.classList.add("translate-y-20", "opacity-0", "invisible");
             }
           });
 
@@ -66,6 +73,10 @@ const navItems = [
               });
             });
           }
+
+          goTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
         });
       </script>
       <div
@@ -237,5 +248,25 @@ const navItems = [
         </p>
       </div>
     </footer>
+
+    <button
+      id="go-top-btn"
+      class="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 translate-y-20 opacity-0 invisible z-50"
+      aria-label="Volver arriba"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
   </body>
 </html>
