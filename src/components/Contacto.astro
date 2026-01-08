@@ -1,42 +1,98 @@
-<section class="py-10" id="contacto">
-  <h2 class="text-3xl font-bold text-green-700 text-center">Contáctanos</h2>
-  <p class="text-gray-700 mt-4">
-    Si tienes preguntas o deseas más información, completa el siguiente
-    formulario.
-  </p>
+<section class="py-16 bg-gray-50" id="contacto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">
+        Contáctanos
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Si tienes preguntas o deseas más información, completa el siguiente
+        formulario y nos pondremos en contacto contigo lo antes posible.
+      </p>
+    </div>
 
-  <form
-    class="mt-6 bg-white p-4 sm:p-6 rounded-lg shadow-lg max-w-lg mx-auto"
-    method="POST"
-    action="/api/send-email"
-  >
-    <label class="block text-green-700 font-semibold">name:</label>
-    <input
-      type="text"
-      class="w-full border rounded p-2 mt-2"
-      name="name"
-      required
-    />
+    <div class="max-w-2xl mx-auto">
+      <form
+        class="bg-white p-8 rounded-xl shadow-lg border border-gray-100"
+        method="POST"
+        action="/api/send-email"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label
+              class="block text-sm font-semibold text-gray-700 mb-2"
+              for="name">Nombre Completo</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-semibold text-gray-700 mb-2"
+              for="email">Correo Electrónico</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
+              placeholder="tucorreo@ejemplo.com"
+              required
+            />
+          </div>
+        </div>
 
-    <label class="block text-green-700 font-semibold mt-4"
-      >Correo Electrónico:</label
-    >
-    <input
-      type="email"
-      class="w-full border rounded p-2 mt-2"
-      name="email"
-      required
-    />
+        <div class="mb-6">
+          <label
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            for="subject">Asunto</label
+          >
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
+            placeholder="¿En qué podemos ayudarte?"
+            required
+          />
+        </div>
 
-    <label class="block text-green-700 font-semibold mt-4">Mensaje:</label>
-    <textarea class="w-full border rounded p-2 mt-2" name="message" required
-    ></textarea>
+        <div class="mb-8">
+          <label
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            for="message">Mensaje</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all resize-none"
+            placeholder="Escribe tu mensaje aquí..."
+            required></textarea>
+        </div>
 
-    <button
-      type="submit"
-      class="mt-4 bg-green-600 text-white px-4 py-2 rounded"
-    >
-      Enviar
-    </button>
-  </form>
+        <button
+          type="submit"
+          class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-md flex items-center justify-center gap-2"
+        >
+          <span>Enviar Mensaje</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+            ></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
