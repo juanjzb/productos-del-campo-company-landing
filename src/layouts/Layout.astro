@@ -10,6 +10,7 @@ import facebook from "@assets/icons/facebook.png";
 import instagram from "@assets/icons/instagram.png";
 import twitter from "@assets/icons/twitter.png";
 import linkedin from "@assets/icons/linkedin.png";
+import logo from "@assets/logo.png";
 
 const navItems = [
   { label: "Inicio", href: "#inicio" },
@@ -24,7 +25,7 @@ const navItems = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos del Campo</title>
-    <link rel="icon" type="image/png" href="/productos-del-campo/logo.png" />
+    <link rel="icon" type="image/png" href={logo.src} />
   </head>
   <body class="bg-gray-50 text-gray-800 font-sans">
     <header
@@ -47,9 +48,17 @@ const navItems = [
             }
 
             if (window.scrollY > 300) {
-              goTopBtn.classList.remove("translate-y-20", "opacity-0", "invisible");
+              goTopBtn.classList.remove(
+                "translate-y-20",
+                "opacity-0",
+                "invisible",
+              );
             } else {
-              goTopBtn.classList.add("translate-y-20", "opacity-0", "invisible");
+              goTopBtn.classList.add(
+                "translate-y-20",
+                "opacity-0",
+                "invisible",
+              );
             }
           });
 
@@ -60,7 +69,7 @@ const navItems = [
                 toggleBtn.getAttribute("aria-expanded") === "true";
               toggleBtn.setAttribute(
                 "aria-expanded",
-                !isExpanded ? "true" : "false"
+                !isExpanded ? "true" : "false",
               );
             });
 
@@ -85,7 +94,7 @@ const navItems = [
         <div class="flex items-center space-x-3">
           <a href="#inicio" class="flex items-center gap-2 group">
             <img
-              src="/productos-del-campo/logo.png"
+              src={logo.src}
               alt="Logo"
               class="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
             />
@@ -157,7 +166,7 @@ const navItems = [
             class="flex items-center justify-center md:justify-start gap-3 mb-6"
           >
             <img
-              src="/productos-del-campo/logo.png"
+              src={logo.src}
               alt="Logo"
               class="h-12 w-12 bg-white rounded-full p-1"
             />
